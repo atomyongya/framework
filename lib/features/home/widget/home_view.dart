@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:widgets/buttons/app_button.dart';
 
 class HomeView extends StatefulWidget {
@@ -11,6 +12,10 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  final List<XFile> medias = [];
+
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +26,7 @@ class _HomeViewState extends State<HomeView> {
           children: <Widget>[
             AppButton(
               onTap: () {},
-              text: 'Notification',
+              text: 'Pick Image',
             ),
           ],
         ),
@@ -29,3 +34,4 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
+

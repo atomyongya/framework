@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:app_themes/themes/app_themes.dart';
 import 'package:app_themes/themes/base_themes.dart';
 import 'package:flutter_app/utils/router/router.dart';
-import 'package:flutter_app/features/home/widget/home_view.dart';
+import 'package:flutter_app/features/posts/widget/posts_view.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -22,7 +22,7 @@ class _AppState extends State<App> {
       create: (context) => _theme,
       child: MaterialApp(
         theme: _theme.switchTheme(),
-        home: const HomeView(),
+        home: const PostsView(),
         onGenerateRoute: onGenerateRoute,
       ),
     );
