@@ -1,4 +1,4 @@
-library notifications;
+library;
 
 /// A Calculator.
 class Calculator {

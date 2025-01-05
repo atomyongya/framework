@@ -1,4 +1,4 @@
-library app_themes;
+library;
 
 /// A Calculator.
 class Calculator {

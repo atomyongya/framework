@@ -1,4 +1,4 @@
-library models;
+library;
 
 /// A Calculator.
 class Calculator {

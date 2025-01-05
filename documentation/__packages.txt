@@ -1,0 +1,7 @@
+1. flutter_inappwebview
+To open browser within mobile app.
+
+2. confetti
+To show celebration, like subscribe by user in zlinky app
+
+3. web_image_downloader
