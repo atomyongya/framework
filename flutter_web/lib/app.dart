@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/features/home/presentation/screen/home_screen.dart';
+import 'package:flutter_web/config/router/app_router.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -11,8 +11,10 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomeScreen(),
+    return MaterialApp.router(
+      title: 'Web Framework',
+      debugShowCheckedModeBanner: false,
+      routerConfig: appRouter,
     );
   }
 }

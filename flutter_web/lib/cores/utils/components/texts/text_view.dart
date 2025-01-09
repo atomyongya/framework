@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/cores/utils/helpers/responsive_text.dart';
+import 'package:flutter_web/cores/providers/responsive.dart';
+import 'package:flutter_web/cores/utils/constants/app_colors.dart';
 
 class TextView extends StatelessWidget {
   /// Nullable Properties
   final String? text;
+  final Color? color;
   final double? lineHeight;
   final EdgeInsets? padding;
   final Widget? placeholder;
   final double? letterSpacing;
   final FontWeight? fontWeight;
+  final TextOverflow? overflow;
 
   /// Properties With Default Value
   final double rem;
@@ -17,7 +20,9 @@ class TextView extends StatelessWidget {
   const TextView({
     super.key,
     required this.text,
+    this.color,
     this.padding,
+    this.overflow,
     this.fontWeight,
     this.lineHeight,
     this.placeholder,
@@ -40,7 +45,7 @@ class TextView extends StatelessWidget {
       return placeholder!;
     }
 
-    double fontSize = ResponsiveText.rem(context, fontSize: rem);
+    double fontSize = Responsive.text.rem(context, fontSize: rem);
     double? height;
     if (lineHeight != null) {
       height = lineHeight! / (fontSize);
@@ -50,10 +55,12 @@ class TextView extends StatelessWidget {
       padding: padding ?? EdgeInsets.zero,
       child: Text(
         text!,
+        overflow: overflow ?? TextOverflow.ellipsis,
         style: TextStyle(
           height: height,
           fontSize: fontSize,
           letterSpacing: letterSpacing,
+          color: color ?? AppColors.light,
           fontWeight: fontWeight ?? FontWeight.normal,
         ),
       ),

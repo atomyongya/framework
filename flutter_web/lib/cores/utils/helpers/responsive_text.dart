@@ -6,7 +6,7 @@ class ResponsiveText {
   static const double medium = 1.5;
   static const double large = 2;
 
-  static double baseFontSize(BuildContext context) {
+  double baseFontSize(BuildContext context) {
     // 1% of screen width
     double fontSize = MediaQuery.sizeOf(context).width / 100;
 
@@ -18,7 +18,7 @@ class ResponsiveText {
     }
   }
 
-  static double rem(
+  double rem(
     BuildContext context, {
     double fontSize = 1,
     double minFontSize = 14,
