@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late List<AppRoutes> _routes;
+  late FocusNode _genderFocusNode;
 
   @override
   void initState() {
@@ -22,6 +23,14 @@ class _HomeScreenState extends State<HomeScreen> {
     _routes.removeWhere((AppRoutes route) {
       return route.name == AppRoutes.home.name;
     });
+    _genderFocusNode = FocusNode();
+    _genderFocusNode.requestFocus();
+  }
+
+  @override
+  void dispose() {
+    _genderFocusNode.dispose();
+    super.dispose();
   }
 
   @override
@@ -39,6 +48,15 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              DropdownButton(
+                focusNode: _genderFocusNode,
+                value: null,
+                items: ['Male', 'Female', 'Other']
+                    .map<DropdownMenuItem<String>>((e) {
+                  return DropdownMenuItem(value: e, child: Text(e));
+                }).toList(),
+                onChanged: (_) {},
+              ),
               TextView(
                 rem: 4,
                 text: 'Home Screen',
