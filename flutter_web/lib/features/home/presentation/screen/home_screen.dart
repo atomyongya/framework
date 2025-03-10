@@ -48,15 +48,6 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              DropdownButton(
-                focusNode: _genderFocusNode,
-                value: null,
-                items: ['Male', 'Female', 'Other']
-                    .map<DropdownMenuItem<String>>((e) {
-                  return DropdownMenuItem(value: e, child: Text(e));
-                }).toList(),
-                onChanged: (_) {},
-              ),
               TextView(
                 rem: 4,
                 text: 'Home Screen',
