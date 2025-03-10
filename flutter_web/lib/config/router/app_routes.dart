@@ -5,18 +5,8 @@ import 'package:universal_platform/universal_platform.dart';
 enum AppRoutes {
   home,
   responsive,
-  datetime;
-
-  String get name {
-    switch (this) {
-      case home:
-        return 'home';
-      case responsive:
-        return 'responsive';
-      case datetime:
-        return 'datetime';
-    }
-  }
+  datetime,
+  modals;
 
   String get path {
     switch (this) {
@@ -26,6 +16,8 @@ enum AppRoutes {
         return '/responsive';
       case datetime:
         return '/datetime';
+      case modals:
+        return '/modals';
     }
   }
 

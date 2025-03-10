@@ -26,6 +26,7 @@ dependencies:
     path: ./packages/widgets
   app_themes:
     path: ./packages/app_themes
+  help_scout_beacon: ^0.0.5
 
 dev_dependencies:
   flutter_test:
